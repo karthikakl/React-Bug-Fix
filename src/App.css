@@ -1,75 +1,106 @@
 body {
   background-color: #121212; /* Dark background */
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full screen center */
+  height: 100vh;
   margin: 0;
 }
 
 .todo-container {
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
-  padding: 20px;
-  background: #1e1e1e; /* Dark card background */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  padding: 30px 25px;
+  background: #1e1e1e;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
 }
 
 .todo-title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
   color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .todo-input-wrapper {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 25px;
 }
 
 .todo-input {
   flex: 1;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
   border: 1px solid #333;
   background-color: #2a2a2a;
-  color: white;
+  color: #ffffff;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .todo-input:focus {
   border-color: #00bcd4;
+  box-shadow: 0 0 8px #00bcd4;
+  outline: none;
 }
 
 .todo-button {
-  padding: 10px 16px;
+  padding: 12px 18px;
   background-color: #00bcd4;
-  color: black;
+  color: #121212;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .todo-button:hover {
   background-color: #0097a7;
+  transform: scale(1.05);
 }
 
 .todo-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .todo-item {
-  padding: 10px;
-  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 10px;
   background: #2a2a2a;
-  border-radius: 6px;
-  transition: background 0.2s ease;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .todo-item:hover {
   background: #3a3a3a;
+  transform: translateY(-2px);
+}
+
+.todo-delete-button {
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.todo-delete-button:hover {
+  background-color: #e60000;
+  transform: scale(1.1);
 }

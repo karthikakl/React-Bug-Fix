@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import TodoItem from "./ToolItem";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -13,6 +12,10 @@ export default function TodoList() {
   const addTodo = () => {
     if (!task.trim()) return;
     setTodos([task]);
+  };
+
+  const deleteTodo = (indexToDelete) => {
+    setTodos((prev) => prev.filter((_, index) => index !== indexToDelete));
   };
 
   return (
@@ -30,8 +33,13 @@ export default function TodoList() {
         </button>
       </div>
       <ul className="todo-list">
-        {todos.map((todo, index) => (
-          <TodoItem text={todo} />
+        {todos.map((todo) => (
+          <li className="todo-item">
+            {todo}{" "}
+            <button className="todo-delete-button" onClick={() => deleteTodo()}>
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </div>
